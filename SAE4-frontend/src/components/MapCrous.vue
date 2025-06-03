@@ -63,7 +63,7 @@ async function recuperationRUVisible(bounds) {
   return data.data
 }
 
-async function fetchLogements(bounds) {
+async function recuperationCrous(bounds) {
   const sw = bounds.getSouthWest()
   const ne = bounds.getNorthEast()
   const minLat = Math.min(sw.lat, ne.lat)
@@ -76,19 +76,18 @@ async function fetchLogements(bounds) {
   return data.data
 }
 
-// CLUSTER UNIQUE pour RU + logements
 async function afficherClusterUnique(map) {
-  // On enlève le cluster précédent
+
   if (markerCluster && map.hasLayer(markerCluster)) {
     map.removeLayer(markerCluster)
   }
   markerCluster = L.markerClusterGroup()
   const bounds = map.getBounds()
-  // Récupérer les deux listes
+
   const ruData = await recuperationRUVisible(bounds)
-  const logementData = await fetchLogements(bounds)
+  const logementData = await recuperationCrous(bounds)
   const seen = new Set()
-  // Ajoute tous les RU
+
   ruData.forEach(resto => {
     const attrs = resto.attributes || resto
     const latitude = attrs.latitude
@@ -110,7 +109,7 @@ async function afficherClusterUnique(map) {
       markerCluster.addLayer(marker)
     }
   })
-  // Ajoute tous les logements
+
   logementData.forEach(lgt => {
     const attrs = lgt.attributes || lgt
     const lat = attrs.latitude
