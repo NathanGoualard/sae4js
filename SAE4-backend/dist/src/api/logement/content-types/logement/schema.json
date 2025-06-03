@@ -1,0 +1,72 @@
+{
+    "kind": "collectionType",
+    "collectionName": "logements",
+    "info": {
+        "singularName": "logement",
+        "pluralName": "logements",
+        "displayName": "logement"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "titre": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        },
+        "latitude": {
+            "type": "decimal"
+        },
+        "longitude": {
+            "type": "decimal"
+        },
+        "zone": {
+            "type": "string"
+        },
+        "infos": {
+            "type": "text"
+        },
+        "services": {
+            "type": "text"
+        },
+        "contact": {
+            "type": "text"
+        },
+        "address": {
+            "type": "string"
+        },
+        "mail": {
+            "type": "string"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "ouverture": {
+            "type": "string"
+        },
+        "URLinternet": {
+            "type": "string"
+        },
+        "visiteVirtuelleURL": {
+            "type": "string"
+        },
+        "crousAndGoUrl": {
+            "type": "string"
+        },
+        "albumUrl": {
+            "type": "string"
+        },
+        "bookingUrl": {
+            "type": "string"
+        },
+        "troubleshootingUrl": {
+            "type": "string"
+        },
+        "images": {
+            "type": "string"
+        }
+    }
+}
