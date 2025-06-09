@@ -3,18 +3,24 @@
     <header class="header-crous">
       <h1>Carte des RU CROUS</h1>
     </header>
-    <div class="map-container">
-      <div id="map"></div>
-      <button class="geoloc-btn" @click="geolocaliser">Me localiser</button>
-    </div>
-    <div v-if="RUselectionner" class="ru-info">
-      <h2>{{ RUselectionner.name || RUselectionner.titre }}</h2>
-      <div v-if="RUselectionner.zone"><b>Zone :</b> {{ RUselectionner.zone }}</div>
-      <div v-if="RUselectionner.region"><b>Région :</b> {{ RUselectionner.region }}</div>
-      <div v-if="RUselectionner.description"><b>Description :</b> {{ RUselectionner.description }}</div>
-      <div v-if="RUselectionner.opening"><b>Horaires :</b> {{ RUselectionner.opening }}</div>
-      <div v-if="RUselectionner.contact" v-html="RUselectionner.contact"></div>
-      <div v-if="RUselectionner.infos" v-html="RUselectionner.infos"></div>
+
+    <div class="main-content">
+      <!-- Carte + bouton -->
+      <div class="map-wrapper">
+        <div class="map-container">
+          <div id="map"></div>
+          <button class="geoloc-btn" @click="geolocaliser">Me localiser</button>
+        </div>
+      </div>
+
+      <div v-if="RUselectionner" class="ru-info">
+        <h2>{{ RUselectionner.name || RUselectionner.titre }}</h2>
+        <div v-if="RUselectionner.zone"><b>Zone :</b> {{ RUselectionner.zone }}</div>
+        <div v-if="RUselectionner.region"><b>Région :</b> {{ RUselectionner.region }}</div>
+        <div v-if="RUselectionner.description"><b>Description :</b> {{ RUselectionner.description }}</div>
+        <div v-if="RUselectionner.contact" v-html="RUselectionner.contact"></div>
+        <div v-if="RUselectionner.infos" v-html="RUselectionner.infos"></div>
+      </div>
     </div>
   </div>
 </template>
